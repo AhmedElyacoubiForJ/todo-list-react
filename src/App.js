@@ -55,7 +55,7 @@ function App() {
                       key={index}
                       onClick={() => handleIsDoneTodo(index)}> {name}
                     </li>
-                    <span onClick={() => handleDeleteTodo(index)}>❌</span>
+                    <span className="trash" onClick={() => handleDeleteTodo(index)}>❌</span>
                   </div>
                 )
               }
