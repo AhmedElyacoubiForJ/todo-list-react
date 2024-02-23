@@ -19,6 +19,12 @@ function App() {
     setTodos(newTodos)
   }
 
+  const handleDeleteTodo = (index) => {
+    const newTodos = [...todos]
+    newTodos.splice(index, 1)
+    setTodos(newTodos)
+  }
+
   return (
     <div className="App">
       <h2>To Do List</h2>
@@ -40,15 +46,17 @@ function App() {
             // )
 
             todos.map(
-              ({name, isDone}, index) => {
+              ({ name, isDone }, index) => {
                 return (  // index as key is not the best practice, but here is ok
-                  <li
-                    className={isDone ? "done" : ""}
-                    // style={{textDecoration: isDone ? "line-through" : ""}}
-                    key={index}
-                    onClick={() => handleIsDoneTodo(index)}>
-                    {name}
-                  </li>
+                  <div className='list-item'>
+                    <li
+                      className={isDone ? "done" : ""}
+                      // style={{textDecoration: isDone ? "line-through" : ""}}
+                      key={index}
+                      onClick={() => handleIsDoneTodo(index)}> {name}
+                    </li>
+                    <span onClick={() => handleDeleteTodo(index)}>❌</span>
+                  </div>
                 )
               }
             )

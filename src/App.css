@@ -20,3 +20,9 @@
 .done {
   text-decoration: line-through;
 }
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
