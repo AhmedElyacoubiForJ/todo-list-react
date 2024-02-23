@@ -44,6 +44,7 @@ function App() {
                 return (  // index as key is not the best practice, but here is ok
                   <li
                     className={isDone ? "done" : ""}
+                    // style={{textDecoration: isDone ? "line-through" : ""}}
                     key={index}
                     onClick={() => handleIsDoneTodo(index)}>
                     {name}
