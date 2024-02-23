@@ -14,11 +14,13 @@ function App() {
   return (
     <div className="App">
       <h2>To Do List</h2>
-      <ul>
-        { todos.map( (todo) => { return (<li>{todo}</li>) } ) }
-      </ul>
-      <input  ref={inputRef} placeholder='Enter todo...'/>
-      <button onClick={addTodoHandler}>Add</button>
+      <div className="to-do-container">
+        <ul>
+          {todos.map((todo) => { return (<li>{todo}</li>) })}
+        </ul>
+        <input ref={inputRef} placeholder='Enter todo...' />
+        <button onClick={addTodoHandler}>Add</button>
+      </div>
     </div>
   );
 }
